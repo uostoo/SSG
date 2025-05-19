@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela do Cliente</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #f4f7f6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1342a2 0%, #17205D 100%);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    .search-container {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      margin: 0 20px;
+    }
+
+    header input {
+      width: 60%;
+      max-width: 400px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 24px;
+      font-size: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .notifications {
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .notifications:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .service {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .service button {
+      background-color: #1342a2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+    }
+
+    .service button:hover {
+      background-color: #17205D;
+    }
+
+    footer {
+      background-color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    footer button {
+      padding: 12px 25px;
+      background-color: #1342a2;
+      color: white;
+      border: none;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: auto;
+      min-width: 200px;
+    }
+
+    footer button:hover {
+      background-color: #17205D;
+      transform: translateY(-2px);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .overlay-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 450px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .overlay-content button {
+      margin: 10px;
+      padding: 12px 25px;
+      background-color: #1342a2;
+      color: white;
+      border: none;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .overlay-content button:hover {
+      background-color: #17205D;
+    }
+
+    @media (max-width: 768px) {
+      footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      footer button {
+        width: 90%;
+      }
+
+      .search-container {
+        margin: 0 10px;
+      }
+
+      header input {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <img src="/assets/Logo.svg" alt="Logo">
+    <div class="search-container">
+      <input id="search" type="text" placeholder="Buscar serviços...">
+    </div>
+    <span class="notifications" onclick="showNotifications()"><img src="/assets/ringing_3602136.svg" alt="Sino" style="margin-top: 14px;"></span>
+  </header>
+
+  <!-- Corpo Principal -->
+  <main id="services">
+    <!-- Os serviços criados por prestadores serão exibidos aqui -->
+  </main>
+
+  <!-- Notificações -->
+  <div id="notifications-overlay" class="overlay">
+    <div class="overlay-content">
+      <h3>Notificações</h3>
+      <p id="notifications-content">Não há notificações.</p>
+      <button onclick="closeNotifications()">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Formulário de Contratação -->
+  <div id="booking-overlay" class="overlay">
+    <div class="overlay-content">
+      <h3>Contratar Serviço</h3>
+      <label for="client-name">Seu Nome:</label>
+      <input id="client-name" class="form-input" type="text" placeholder="Seu nome">
+      
+      <label for="service-date">Data e Hora:</label>
+      <input id="service-date" class="form-input" type="datetime-local">
+      
+      <label for="service-duration">Duração do Serviço (em horas):</label>
+      <input id="service-duration" class="form-input" type="number" placeholder="Duração em horas">
+      
+      <input id="service-id" type="hidden">
+      <input id="prestador-id" type="hidden"> <!-- Campo oculto para o ID do prestador -->
+      
+      <button onclick="sendBooking()">Enviar Notificação</button>
+      <button onclick="closeBookingForm()">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <button onclick="viewHistory()" style="margin-left: 490px;">Histórico de Contratações</button>
+    <button onclick="becomeProvider()" style="margin-right: 490px;">Virar Prestador</button>
+  </footer>
+
+  <script>
+    // Função para carregar os serviços do backend
+    function loadServices() {
+        fetch('mostrar_servico.php')
+            .then(response => response.json())
+            .then(services => {
+                const servicesContainer = document.getElementById('services');
+                servicesContainer.innerHTML = ''; // Limpa a lista de serviços
+
+                if (services.error) {
+                    alert(services.error);
+                    return;
+                }
+
+                services.forEach(service => {
+                    const serviceElement = document.createElement('div');
+                    serviceElement.classList.add('service');
+
+                    serviceElement.innerHTML = `
+                        <h3>${service.nome_do_servico}</h3>
+                        <p><strong>Prestador:</strong> ${service.prestador_nome}</p>
+                        <p><strong>Descrição:</strong> ${service.descricao}</p>
+                        <p><strong>Valor por Hora:</strong> R$ ${parseFloat(service.valorhora).toFixed(2)}</p>
+                        <p><strong>Telefone:</strong> ${service.telefone}</p>
+                        <button onclick="openBookingForm('${service.nome_do_servico}', ${service.id}, '${service.prestador_nome}', ${service.prestador_id})">Contratar</button>
+                    `;
+                    servicesContainer.appendChild(serviceElement);
+                });
+            })
+            .catch(error => console.error('Erro ao carregar os serviços:', error));
+    }
+
+    // Função para abrir o formulário de agendamento
+    function openBookingForm(serviceName, serviceId, prestadorName, prestadorId) {
+        const overlay = document.getElementById('booking-overlay');
+        overlay.style.display = 'flex';
+
+        // Exibe informações sobre o serviço selecionado
+        document.getElementById('client-name').value = ''; // Limpa o campo de nome do cliente
+        document.getElementById('service-date').value = ''; // Limpa o campo de data
+        document.getElementById('service-duration').value = ''; // Limpa o campo de duração
+        
+        // Preenche os campos com os dados do serviço
+        document.getElementById('service-id').value = serviceId;  // Agora temos um campo invisível para o ID do serviço
+        document.getElementById('prestador-id').value = prestadorId; // Agora temos o campo invisível para o ID do prestador
+    }
+
+    // Função para obter o clientId usando AJAX
+function getClientId() {
+    return new Promise((resolve, reject) => {
+        fetch('get_client_id.php')
+            .then(response => response.text())
+            .then(data => {
+                if (data === 'null') {
+                    alert('Você precisa estar logado para agendar um serviço.');
+                    reject('Cliente não logado');
+                } else {
+                    resolve(data);
+                }
+            })
+            .catch(error => reject(error));
+    });
+}
+
+// Usando o clientId na função de agendamento
+function sendBooking() {
+    getClientId().then(clientId => {
+        const serviceId = document.getElementById('service-id').value;
+        const clientName = document.getElementById('client-name').value;
+        const serviceDate = document.getElementById('service-date').value;
+        const serviceDuration = document.getElementById('service-duration').value;
+        const prestadorId = document.getElementById('prestador-id').value;
+
+        if (!clientName || !serviceDate || !serviceDuration) {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        fetch('agendar_servico.php', {
+            method: 'POST',
+            body: new URLSearchParams({
+                serviceId,
+                clientName,
+                serviceDate,
+                serviceDuration,
+                clientId,
+                prestadorId
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Serviço agendado com sucesso!');
+                closeBookingForm();
+            } else {
+                alert('Erro ao agendar o serviço.');
+            }
+        })
+        .catch(error => console.error('Erro ao agendar serviço:', error));
+    }).catch(error => console.log(error));
+}
+
+    // Função para fechar o formulário de agendamento
+    function closeBookingForm() {
+        const overlay = document.getElementById('booking-overlay');
+        overlay.style.display = 'none';
+    }
+
+    // Função para abrir as notificações
+    function showNotifications() {
+        const notificationsOverlay = document.getElementById('notifications-overlay');
+        notificationsOverlay.style.display = 'flex';
+        const notificationsContent = document.getElementById('notifications-content');
+        notificationsContent.textContent = 'Função a ser implementada para clientes.';
+    }
+
+    // Função para fechar as notificações
+    function closeNotifications() {
+        const notificationsOverlay = document.getElementById('notifications-overlay');
+        notificationsOverlay.style.display = 'none';
+    }
+
+    // Função para visualizar o histórico de contratações
+    function viewHistory() {
+        window.location.href = 'historico.php';
+    }
+
+    // Função para virar prestador
+    function becomeProvider() {
+    if (confirm("Tem certeza de que deseja virar prestador? Isso é irreversível.")) {
+        if (confirm("Você não poderá voltar a ser cliente após este processo. Deseja continuar?")) {
+            // Faz a requisição para virar prestador
+            fetch('virar_prestador.php', {
+    method: 'POST',
+})
+.then(response => response.json())
+.then(data => {
+    if (data.success) {
+        alert('Você agora é um prestador!');
+        window.location.href = data.redirect;
+    } else {
+        alert(data.message || 'Erro ao realizar a operação.');
+    }
+})
+.catch(error => {
+    console.error('Erro na requisição:', error);
+    alert('Erro na comunicação com o servidor. Tente novamente mais tarde.');
+});
+
+        }
+    }
+}
+
+
+    // Carregar os serviços ao carregar a página
+    loadServices();
+  </script>
+</body>
+</html>

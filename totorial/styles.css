@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body, html {
+    height: 100%;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFFFF;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #1342a2 0%, #17205D 100%);
+    height: auto;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    background-color: #ffffff;
+    border: 0px solid #1343A2;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    color: #1343A2;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1343A2;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: transparent;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.voltar:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.buttons-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.content-container {
+    margin-top: 40px;
+    padding: 30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+h2 {
+    color: #1343A2;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.footer {
+    background-color: #1343A2;
+    padding: 30px;
+    text-align: center;
+    margin-top: 8%;
+    font-size: 1rem;
+}
+
+.footer p {
+    margin-bottom: -10px;
+}

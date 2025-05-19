@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSG - Sistema de Serviços Gerais</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1342a2 0%, #17205D 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            border-radius: 24px;
+            font-size: 1.1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .primary-button {
+            background-color: white;
+            color: #1342a2;
+        }
+
+        .secondary-button {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .features {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            color: #1342a2;
+            margin-bottom: 50px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .feature-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: #1342a2;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #1342a2;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <img src="/assets/Logo.svg" alt="Logo SSG" style="height: 80px; margin-bottom: 30px;">
+        <h1>Conectando Necessidades a Soluções</h1>
+        <p>Encontre profissionais qualificados para seus serviços domésticos ou ofereça suas habilidades para quem precisa.</p>
+        <div class="cta-buttons">
+            <a href="/cadastro/" class="cta-button primary-button">Começar Agora</a>
+            <a href="/login/" class="cta-button secondary-button">Já tenho uma conta</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Por que escolher o SSG?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Facilidade de Uso</h3>
+                <p>Interface intuitiva para encontrar ou oferecer serviços de forma rápida e simples.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Flexibilidade</h3>
+                <p>Escolha seus horários e valores. Você tem total controle sobre sua agenda.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Segurança</h3>
+                <p>Sistema confiável com avaliações e feedback dos usuários.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Variedade</h3>
+                <p>Diversos tipos de serviços disponíveis: limpeza, manutenção, jardinagem e muito mais.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 SSG - Sistema de Serviços Gerais. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

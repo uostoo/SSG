@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="tudo">
+            <div class="logo">
+                <img src="/assets/Logo.svg" alt="Logo-SSG">
+            </div>
+            
+            <div class="vindo">
+                <h2>Bem-vindo de volta</h2>
+                <p>Por favor insira seus dados</p>
+            </div>
+        </div>
+
+        <!-- Formulário de Login com ação para o script PHP -->
+        <form id="loginForm" method="POST" action="login.php">
+            <div class="campos">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha" required>
+            </div>
+
+            <div class="botoes">
+                <button type="submit">Entrar</button> <!-- O botão agora é parte do formulário -->
+            </div>
+        </form>
+
+        <div class="conta">
+            <p>Não possui uma conta? <a href="/cadastro/index.html">Cadastre-se</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Verifica se a URL contém um erro
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+
+        if (error === 'senha_incorreta') {
+            alert("Senha incorreta. Tente novamente.");
+        } else if (error === 'usuario_nao_encontrado') {
+            alert("Usuário não encontrado. Verifique seu e-mail.");
+        }
+    </script>
+</body>
+</html>

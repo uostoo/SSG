@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte - SSG</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <a href="/telaInicial/index.html"><button class="voltar" type="submit">Voltar</button></a>
+    <h1>Oi, como podemos ajudar?</h1>
+    <div class="buttons-container">
+        <button class="btn" onclick="showSection('primeiros-passos')">Primeiros passos no SSG</button>
+        <button class="btn" onclick="showSection('gerenciar-conta')">Como acessar e gerenciar sua conta</button>
+    </div>
+
+
+</header>
+
+
+<div class="content-container">
+    <!-- Primeiros Passos no SSG -->
+    <div id="primeiros-passos" class="section">
+        <h2>Primeiros passos no SSG</h2>
+        <p>O SSG é um sistema de serviços gerais, onde existem dois tipos de usuário:</p>
+        <ul>
+            <li><strong>Usuário Cliente:</strong> Pode navegar pelos serviços, contratar prestadores e agendar serviços.</li>
+            <li><strong>Usuário Prestador de Serviços:</strong> Pode se cadastrar para oferecer serviços, definir preços e agendar compromissos com clientes.</li>
+        </ul>
+        <p>Quando você entra no sistema e se cadastra, será automaticamente registrado como <strong>cliente</strong>.</p>
+        <p>Para se tornar um <strong>prestador de serviços</strong>, basta acessar o menu de busca de serviços e clicar no botão "Virar Prestador". Lá você preencherá um formulário com informações sobre seu serviço.</p>
+        <p>Depois de se tornar um prestador, você poderá criar posts sobre os serviços que oferece, como preço, nome e descrição do serviço.</p>
+    </div>
+
+    <!-- Como acessar e gerenciar sua conta -->
+    <div id="gerenciar-conta" class="section">
+        <h2>Como acessar e gerenciar sua conta</h2>
+        <p>Após se cadastrar, você pode acessar sua conta a qualquer momento clicando no seu perfil.</p>
+        <ul>
+            <li><strong>Acessar perfil:</strong> Clique na opção "Ir para o perfil" para visualizar e editar suas informações.</li>
+            <li><strong>Virar Prestador:</strong> Se você for um cliente e desejar se tornar um prestador, basta clicar no botão "Virar Prestador".</li>
+            <li><strong>Gerenciar Serviços:</strong> Como prestador, você poderá adicionar e editar posts com informações sobre os serviços que oferece, incluindo preço e descrição.</li>
+            <li><strong>Agendar Serviço:</strong> Como cliente, ao encontrar um prestador de interesse, você pode agendar um serviço diretamente com ele, preenchendo dados como dia, hora e localização.</li>
+            <li><strong>Avaliação:</strong> Após o serviço ser concluído, o cliente poderá avaliar o prestador diretamente no sistema.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Rodapé -->
+<div class="footer">
+    <p style="color: white;">&copy; 2024 SSG - Sistema de Serviços Gerais. Todos os direitos reservados.</p>
+</div>
+
+<script src="script.js">
+</script>
+
+</body>
+</html>

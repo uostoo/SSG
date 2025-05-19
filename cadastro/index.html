@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Cadastro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="tudo">
+            <div class="logo">
+                <img src="/assets/Logo.svg" alt="Logo-SSG">
+            </div>
+            <div class="vindo">
+                <h2>Bem-vindo ao nosso sistema</h2>
+                <p>Por favor insira seus dados</p>
+            </div>
+        </div>
+
+        <form id="signupForm" method="POST" action="cadastro.php">
+            <div class="campos">
+                <label for="username">Nome</label>
+                <input type="text" name="username" id="username" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="password">Senha</label>
+                <input type="password" name="password" id="password" required minlength="8">
+
+                <div class="selecao">
+                    <label>
+                        <input type="radio" name="tipo" value="cliente" required> Cliente
+                    </label>
+                    <label>
+                        <input type="radio" name="tipo" value="prestador"> Prestador
+                    </label>
+                </div>
+            </div>
+
+            <div class="botoes">
+                <button type="submit">Cadastre-se</button>
+            </div>
+        </form>
+
+        <div class="conta">
+            <p>Já possui uma conta? <a href="/login/index.html">Entre</a></p>
+        </div>
+    </div>
+</body>
+</html>

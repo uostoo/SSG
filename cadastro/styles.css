@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body, html {
+    height: 100%;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tudo{
+    margin-bottom: 48px;
+}
+
+.logo img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.vindo h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #1e1e1e;
+}
+
+.vindo p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.campos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 48px;
+}
+
+.campos label {
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+.campos input {
+    padding: -10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+.campos input:focus {
+    border-bottom: 2px solid #1e1e1e;
+}
+
+.campos span {
+    text-align: right;
+    font-size: 12px;
+    color: #665858;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+.campos span:hover{
+    text-decoration: underline;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.botoes button {
+    height: 42px;
+    padding-bottom: 0px;
+    border: none;
+    background-color: #1342a2;
+    color: white;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.botoes button:hover {
+    background-color: #17205D;
+}
+
+.botoes a {
+    text-decoration: none;
+}
+
+.botoes a button {
+    height: 42px;
+    width: 360px;
+    padding-bottom: 0px;
+    border: none;
+    background-color: #E9E9E9;
+    color: #121212;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.botoes a button:hover{
+    background-color: #d6d4d4;
+}
+
+.conta {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.conta p {
+    color: #665858;
+    text-decoration: none;
+}
+
+.conta a {
+    font-weight:700;
+    color: #1342a2;
+    text-decoration: none;
+}
+
+.conta a:hover {
+    text-decoration: underline;
+}
+
+.selecao {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+.selecao label {
+    padding: 10px 20px;
+    border: 2px solid #1342a2;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.selecao label:hover {
+    background-color: #1342a2;
+    color: white;
+}
