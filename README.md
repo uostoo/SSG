@@ -1,6 +1,6 @@
 # 🛠️ SSG - Sistema de Serviços Gerais
 
-Em 2024, participei do desenvolvimento do **SSG** como **desenvolvedor back-end**, focando na lógica de negócios, integração com banco de dados, regras de agendamento e controle de acesso. O SSG é um sistema web com o objetivo de conectar prestadores de serviços domésticos (como encanadores, diaristas, eletricistas, entre outros) a clientes que buscam por esses serviços. O projeto foi orientado pelo professor **Daniel Vidal** como parte de nossas atividades práticas em desenvolvimento de sistemas.
+Em 2024, participei do desenvolvimento do SSG como desenvolvedor front-end, sendo responsável pela construção da interface do usuário, responsividade e usabilidade. O SSG é um sistema web com o objetivo de conectar prestadores de serviços domésticos (como encanadores, diaristas, eletricistas, entre outros) a clientes que buscam por esses serviços. O projeto foi orientado pelo professor Daniel Vidal como parte de nossas atividades práticas em desenvolvimento de sistemas.
 
 ## 🔍 Visão Geral
 
@@ -22,16 +22,15 @@ O SSG funciona como uma plataforma de agendamentos entre prestadores e clientes.
 - **Banco de Dados**: MySQL
 - **Servidor**: Apache (via XAMPP ou WAMP)
 
-## 🧠 Modelagem do Banco de Dados
+## 🖌️ Prototipagem de Telas
 
-O sistema utiliza um banco relacional em MySQL com herança entre as tabelas `cliente` e `prestador`, e relacionamentos bem definidos para controle de serviços e agendamentos.
+As telas do sistema foram prototipadas com foco na experiência do usuário, seguindo princípios de usabilidade e design responsivo. As interfaces contemplam o fluxo completo de agendamento de serviços, cadastro de usuários (cliente e prestador), visualização de serviços disponíveis e gerenciamento de agendamentos, garantindo uma navegação clara e intuitiva.
 
-### Tabelas principais
+### Telas principais
 
-- `cliente`: informações de login e identificação
-- `prestador`: especialização do cliente
-- `servicos`: serviços oferecidos
-- `agendamentos`: registros de horários e status
-- `servicos_prestados`: histórico e avaliações
-
-📂 O script SQL está disponível neste repositório: [`ssg.sql`](./ssg.sql)
+- **Login/Cadastro de Cliente**: formulário de autenticação e criação de conta.
+- **Perfil do Prestador**: exibe especializações e informações do profissional.
+- **Lista de Serviços**: visualização dos serviços disponíveis para contratação.
+- **Agendamentos**: interface para marcar, acompanhar e gerenciar horários.
+  
+🎨 Todas as telas foram projetadas com foco em usabilidade e fluidez na navegação.
